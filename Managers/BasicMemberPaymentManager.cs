@@ -7,9 +7,15 @@ namespace PaymentProcessor.Managers
 {
     public class BasicMemberPaymentManager : IPaymentManager
     {
-        public void ProcessPayement()
+        public virtual void ProcessPayement()
         {
-            
+            ActivateMembership();
+        }
+
+        protected void ActivateMembership()
+        {
+            // if not a member activate basic membership
+            Console.WriteLine("Basic memebership updated");
         }
     }
 }
