@@ -8,6 +8,7 @@ namespace PaymentProcessor.Managers
         public virtual void ProcessPayement()
         {
             GeneratePackageSlip();
+            GenerateCommision();
         }
 
         protected void GeneratePackageSlip()
