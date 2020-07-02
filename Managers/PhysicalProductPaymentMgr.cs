@@ -5,9 +5,19 @@ namespace PaymentProcessor.Managers
 {
     public class PhysicalProductPaymentMgr : IPaymentManager
     {
-        public void ProcessPayement()
+        public virtual void ProcessPayement()
         {
-            
+            GeneratePackageSlip();
+        }
+
+        protected void GeneratePackageSlip()
+        {
+            Console.WriteLine("Package Slip generated");
+        }
+
+        protected void GenerateCommision()
+        {
+            Console.WriteLine("Commission payment generated");
         }
     }
 }

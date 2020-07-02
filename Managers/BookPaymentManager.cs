@@ -1,12 +1,20 @@
 ﻿using PaymentProcessor.Interfaces;
+using System;
 
 namespace PaymentProcessor.Managers
 {
-    internal class BookPaymentManager : PhysicalProductPaymentMgr
+    public class BookPaymentManager : PhysicalProductPaymentMgr
     {
-        public void ProcessPayement()
+        public override void ProcessPayement()
         {
-            
+            GeneratePackageSlip();
+            GenerateDuplicatePackageSlip();
+            GenerateCommision();
+        }
+
+        protected void GenerateDuplicatePackageSlip()
+        {
+            Console.WriteLine("Generated Duplicate Package Slip for Book");
         }
     }
 }
