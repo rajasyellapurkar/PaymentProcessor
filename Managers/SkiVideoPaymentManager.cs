@@ -6,5 +6,10 @@ namespace PaymentProcessor.Managers
 {
     public class SkiVideoPaymentManager: VideoPaymentManager
     {
+        protected override void GenerateVideoPackageSlip()
+        {
+            base.GenerateVideoPackageSlip();
+            Console.WriteLine("Add Free First Aid video");
+        }
     }
 }

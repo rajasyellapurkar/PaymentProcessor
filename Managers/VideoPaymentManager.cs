@@ -7,9 +7,14 @@ namespace PaymentProcessor.Managers
 {
     public class VideoPaymentManager : IPaymentManager
     {
-        public void ProcessPayement()
+        public virtual void ProcessPayement()
         {
-            
+            GenerateVideoPackageSlip();
+        }
+
+        protected virtual void GenerateVideoPackageSlip()
+        {
+            Console.WriteLine("Video Package Slip generated");
         }
     }
 }
