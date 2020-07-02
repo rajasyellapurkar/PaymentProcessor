@@ -4,3 +4,5 @@
 
 /.vs/PaymentProcessor/v16
 /obj
+/PaymentProcessor.csproj.user
+/bin/Debug/netcoreapp3.1

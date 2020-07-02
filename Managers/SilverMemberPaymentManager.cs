@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PaymentProcessor.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +7,10 @@ namespace PaymentProcessor.Managers
 {
     public class SilverMemberPaymentManager:BasicMemberPaymentManager
     {
+        public SilverMemberPaymentManager(IEmailUtility emailUtility):base(emailUtility)
+        {
+        }
+
         public override void ProcessPayement()
         {
             // If not an exisitng member and opted directly for Silver
@@ -14,6 +19,9 @@ namespace PaymentProcessor.Managers
 
             // Upgrade to Silver Member
             UpgradeToSilver();
+
+            // Send Email
+            SendEmail("Silver Membership activated");
         }
 
         public virtual void UpgradeToSilver()
